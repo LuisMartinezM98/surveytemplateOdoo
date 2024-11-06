@@ -1,0 +1,28 @@
+<record id="survey_template_form" model="ir.ui.view">
+    <field name="name">survey.template.form</field>
+    <field name="model">survey.template</field>
+    <field name="arch" type="xml">
+        <form string="Survey Template">
+            <header>
+                <button name="import_forms_from_api" type="object" string="Import Forms" class="btn-primary"/>
+            </header>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="user_id"/>
+                </group>
+                <notebook>
+                    <page string="Questions">
+                        <field name="question_ids">
+                            <tree>
+                                <field name="question_text"/>
+                                <field name="question_type"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>

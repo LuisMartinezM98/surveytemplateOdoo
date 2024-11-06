@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vistas para el modelo survey.question -->
+
+    <!-- Vista de lista para preguntas -->
+    <record id="view_survey_question_list" model="ir.ui.view">
+        <field name="name">survey.question.list</field>
+        <field name="model">survey.question</field>
+        <field name="arch" type="xml">
+            <tree string="Survey Questions">
+                <field name="template_id"/>
+                <field name="question_text"/>
+                <field name="question_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para preguntas -->
+    <record id="view_survey_question_form" model="ir.ui.view">
+        <field name="name">survey.question.form</field>
+        <field name="model">survey.question</field>
+        <field name="arch" type="xml">
+            <form string="Survey Question">
+                <group>
+                    <field name="template_id"/>
+                    <field name="question_text"/>
+                    <field name="question_type"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para abrir el listado de preguntas de encuesta -->
+    <record id="action_survey_question" model="ir.actions.act_window">
+        <field name="name">Survey Questions</field>
+        <field name="res_model">survey.question</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú para acceder a las preguntas de encuesta (opcional) -->
+    <menuitem id="menu_survey_question_root" name="Survey Questions" parent="menu_surveys_root" sequence="20"/>
+    <menuitem id="menu_survey_question" name="Questions" parent="menu_survey_question_ro
